@@ -1,0 +1,19 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+autopublish
+insecure
+accounts-password
+constellation:console
+constellation:session
+aldeed:collection2
+aldeed:autoform
+coffeescript
+materialize:materialize
+useraccounts:materialize
+useraccounts:flow-routing
+fabienb4:materialize-components

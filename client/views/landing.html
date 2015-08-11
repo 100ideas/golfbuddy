@@ -1,12 +1,11 @@
 <template name="landing">
-  <main class="landing">
-    <h4 class="center">landing template</h4>
 
+  <main class="landing">
     <div class="container hero">
       <div class="row">
         <div class="col m4 s12">
           <!-- {{> button datatarget="atmodal" modalTrigger="true" text="loginmodal" }} -->
-          <!-- <a class="modal-trigger" href="#atmodal">modal login trigger <i class="fa fa-sign-in fa-lg"></i></a> -->
+          <a class="modal-trigger" href="#atmodal">modal login trigger <i class="fa fa-sign-in fa-lg"></i></a>
         </div>
         <div class="col m4 s12">{{> hello}}</div>
         <div class="col m4 s12">{{> atNavButton }} </div>
@@ -14,6 +13,7 @@
     </div>
 
   {{> loremcard}}
-  <!-- {{> atmodal}} -->
+  {{> atmodal}}
   </main>
+
 </template>

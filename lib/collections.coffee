@@ -5,5 +5,3 @@
 # the type is a string
 
 @Tournaments = new Mongo.Collection 'tournaments'
-console.log "created Tournaments collection"
-

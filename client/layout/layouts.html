@@ -1,0 +1,15 @@
+<template name="landingLayout">
+  <div class="landing-layout valign-wrapper">
+    <div class="valign">  
+      {{> Template.dynamic template=nav}}
+      {{> Template.dynamic template=main}}
+      {{> Template.dynamic template=footer}}
+    </div>
+  </div> 
+</template>
+
+<template name="masterLayout">
+  {{> Template.dynamic template=nav}}
+  {{> Template.dynamic template=main}}
+  {{> Template.dynamic template=footer}}
+</template>

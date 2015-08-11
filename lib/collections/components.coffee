@@ -1,1 +1,0 @@
-# Components. = new Mongo.Collection 'tournaments'

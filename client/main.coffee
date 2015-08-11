@@ -10,7 +10,7 @@ Template.hello.helpers
     Session.get('counter')
 
 Template.hello.events
-  'click button': ->
+  'click .btn': ->
     # increment the counter when button is clicked
     Session.set 'counter', Session.get('counter') + 1
 

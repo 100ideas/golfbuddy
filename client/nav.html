@@ -1,4 +1,5 @@
 <template name="nav">
+<header>
   <nav>
     <div class="container">
       <div class="nav-wrapper">
@@ -6,11 +7,12 @@
         <ul id="nav-mobile" class="right side-nav fixed">
           <li><a href="{{pathFor 'home'}}">Home</a></li>
           <li><a href="{{pathFor 'private'}}">Private</a></li>
-          <li class="col m4 s12"><a class="modal-trigger" href="#atmodal">modaltrigger</a></li>
+          <!-- <li class="col m4 s12"><a class="modal-trigger" href="#atmodal">modaltrigger</a></li> -->
           <li>{{> atNavButton }}</li>
         </ul>
         <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
       </div>
     </div>
   </nav>
+</header>
 </template>

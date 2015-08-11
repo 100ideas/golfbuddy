@@ -6,6 +6,9 @@
   margin-top: 1em;
 }
 
+@media only screen and (max-width : 992px) {
+  .col {margin-bottom:1em;}
+}
 // Footer
 @footer-height: 70px;
 
@@ -27,9 +30,12 @@ body {
 
 // left margin for main content when fixed side nav is open
 @media only screen and (min-width: 993px) {
-  #content {
+  // #content {
+  //   margin-left: 240px;
+  // }
+  main {
     margin-left: 240px;
-  }
+  }  
 }
 
 
@@ -44,15 +50,21 @@ footer {
   }
 }
 
-
 header, main, footer {
   padding-left: 240px;
+  &.landing {
+    padding-left: 0px !important;
+    margin-left: 0px !important;
+
+  }
 }
+
 
 @media only screen and (max-width : 992px) {
   header, main, footer {
     padding-left: 0;
   }
+  body {margin: 0px;}
 }
 
 .container {

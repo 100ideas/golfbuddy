@@ -1,41 +1,19 @@
 <template name="landing">
   <main class="landing">
-    <h4 class="center">Hello World!</h4>
+    <h4 class="center">landing template</h4>
 
     <div class="container hero">
       <div class="row">
         <div class="col m4 s12">
-          {{> button datatarget="atmodal" modalTrigger="true" text="loginmodal" }}
+          <!-- {{> button datatarget="atmodal" modalTrigger="true" text="loginmodal" }} -->
           <!-- <a class="modal-trigger" href="#atmodal">modal login trigger <i class="fa fa-sign-in fa-lg"></i></a> -->
         </div>
         <div class="col m4 s12">{{> hello}}</div>
-        <div class="col m4 s12">Tournaments: {{tcount}} </div>
+        <div class="col m4 s12">{{> atNavButton }} </div>
       </div>
     </div>
 
   {{> loremcard}}
-  {{> atmodal}}
+  <!-- {{> atmodal}} -->
   </main>
 </template>
-
-
-<template name="hello">
-  {{> button id="atsignupbtn" text="Click Me" color="lime"}}
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
-
-<template name="loremcard">
-   <div class="card">
-      <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator" src="http://fillmurray.com/1000/750">
-      </div>
-      <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4">Lorem Card<i class="fa fa-ellipsis-v fa-pull-right"></i></span>
-        <p>Bicycle rights Carles wolf dreamcatcher four dollar toast Wes Anderson</p>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Lorem Card: MOAR!<i class="fa fa-times fa-pull-right"></i></span>
-        <p class="flow-text">Bicycle rights Carles wolf dreamcatcher four dollar toast Wes Anderson, kogi hoodie shabby chic fanny pack 90's leggings quinoa ennui. Portland crucifix typewriter pug, Brooklyn ennui occupy Pitchfork swag Bushwick mumblecore. Jean shorts keffiyeh tilde, 8-bit Williamsburg four dollar toast brunch paleo Etsy gastropub farm-to-table tattooed skateboard tote bag. Cronut semiotics Austin, forage wayfarers biodiesel locavore taxidermy hashtag chia kale chips gentrify raw denim mustache. Flannel shabby chic locavore mumblecore mlkshk. VHS PBR wolf blog Vice keytar. Deep v Banksy salvia, blog distillery Echo Park scenester listicle authentic sartorial tousled Wes Anderson Schlitz.</p>
-      </div>
-    </div>
-  </template>

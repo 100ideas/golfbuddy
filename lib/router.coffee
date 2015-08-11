@@ -1,26 +1,31 @@
 FlowRouter.route '/',
   name: "home",
   action: (params, queryParams) ->
-    if not Meteor.user()
-      BlazeLayout.render 'landingLayout', main: "landing"
-    else
+    if Meteor.user()
       BlazeLayout.render 'masterLayout', 
         nav: "nav",
-        main: "home"
-        footer: "footer",
+        main: "home",
+        footer: "footer",      
+    else
+      BlazeLayout.render 'masterLayout', 
+        nav: {},
+        main: "landing",
+        footer: {},
+
 
 FlowRouter.route '/private',
   name: "private",
   triggersEnter: [AccountsTemplates.ensureSignedIn],
   action: (params, queryParams) ->
     BlazeLayout.render 'masterLayout',
-      footer: "footer",
-      main: "private",
       nav: "nav",
+      main: "private",
+      footer: "footer",
+      
 
 FlowRouter.notFound =
   action: ->
     BlazeLayout.render 'masterLayout',
-      footer: "footer",
-      main: "pageNotFound",
       nav: "nav",
+      main: "pageNotFound",
+      footer: "footer",

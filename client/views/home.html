@@ -1,3 +1,18 @@
 <template name="home">
   <h1 class="center">Hello World!</h1>
+
+  <div class="container hero">
+    <div class="row">
+      <div class="col m4 s12"><a class="modal-trigger" href="#loginmodal">modaltrigger2</a></div>
+      <div class="col m4 s12">{{> hello}}</div>
+      <div class="col m4 s12">col s4</div>
+    </div>
+  </div>
+
+</template>
+
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
 </template>

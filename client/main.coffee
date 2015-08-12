@@ -1,17 +1,13 @@
 Meteor.startup ->
   FlowRouter.reload()
 
-# counter starts at 0
-Session.setDefault 'counter', 0
+# All templates can access session vars
+Template.registerHelper 'session', (input) ->
+  Session.get input
 
-Template.hello.helpers
-  counter: ->
-    Session.get('counter')
-
-Template.hello.events
-  'click .btn': ->
-    # increment the counter when button is clicked
-    Session.set 'counter', Session.get('counter') + 1
+Template.landing.rendered = ->
+  createBackgroundSVG()
+  # TODO switch to materialize parallax http://materializecss.com/parallax.html
 
 # If for some reason we detect that the user was logged out
 # https://github.com/meteor-useraccounts/core/issues/308#issuecomment-127581562
@@ -24,3 +20,25 @@ Tracker.autorun ->
   # routeState = FlowRouter.current()
   console.log "routerState:"
   # console.table(routeState, ["path", "title", "state", "querystring", "pathname", "params", "options", "name"])
+
+
+#############################################################################
+# Animations
+
+# counter starts at 0
+Session.setDefault 'counter', 0
+
+Template.hello.helpers
+  counter: ->
+    Session.get('counter')
+
+Template.hello.events
+  'click .btn': ->
+    # increment the counter when button is clicked
+    Session.set 'counter', Session.get('counter') + 1
+    Session.set 'showBillCard', if Session.get 'showBillCard' then "" else "off"
+    console.log Session.get 'showBillCard'
+    $ '#bill-button span.card-bullet'
+      .addClass "animated"
+      .one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', (e) ->
+        $('#bill-button span.card-bullet').removeClass('animated')

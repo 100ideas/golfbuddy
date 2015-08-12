@@ -1,15 +1,29 @@
-<template name="landingLayout">
-  <div class="landing-layout valign-wrapper">
-    <div class="valign">  
-      {{> Template.dynamic template=nav}}
-      {{> Template.dynamic template=main}}
-      {{> Template.dynamic template=footer}}
-    </div>
-  </div> 
-</template>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="live golf score-sharing app for groups of golfers">  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- http://blog.teamtreehouse.com/optimizing-mobile-web-apps-ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <title>golfbuddy</title>
+</head>
+
+<body>
+</body>
 
 <template name="masterLayout">
-  {{> Template.dynamic template=nav}}
+  <!-- Template.dynamic template=top -->
+  {{> Template.dynamic template=top}}
+  <!-- Template.dynamic template=main -->
   {{> Template.dynamic template=main}}
-  {{> Template.dynamic template=footer}}
+  <!-- Template.dynamic template=bottom -->
+  {{> Template.dynamic template=bottom}}
+  {{> bgphoto}}
+</template>
+
+<template name="bgphoto">
+  <!-- Template.bgphoto.rendered -> createBackgroundSVG() -->
 </template>

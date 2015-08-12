@@ -1,15 +1,15 @@
-# initialize background image
-# called in plate.js: Template.plate.rendered()
+# initialize responsive background image
 @createBackgroundSVG = ->
-  console.log "reticuleAnimation.js:\n\tcreating background svg"
   # set dimensions of full size photos here (small.jpg is 2100x1400)
   photoWidth = 1610
   photoHeight = 1141
-  svg = d3.select('#bg-photo-container').insert('svg', ':first-child')
+  # svg = d3.select('#bg-photo-container').insert('svg', ':first-child')
+  svg = d3.select('body').insert('svg', ':first-child')
+    .attr "id", "bg-photo-svg"
     .attr "width", "100%"
     .attr "height", "100%" 
     .attr "viewBox", "0 0 #{photoWidth} #{photoHeight}"
-    .attr "preserveAspectRatio", "xMinYMid slice"
+    .attr "preserveAspectRatio", "xMidYMid slice"
       .append "svg:image"
       .attr "id", "bg-photo"
       .attr "xlink:href", '../img/RomanRoadCourse9th_crop.jpg'

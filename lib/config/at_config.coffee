@@ -40,6 +40,6 @@ AccountsTemplates.configureRoute 'resetPwd'
 AccountsTemplates.configureRoute 'signIn',
   # layoutTemplate: 'masterLayout'
   # layoutRegions:
-  #   nav: 'nav'
+  #   nav: 'top'
 AccountsTemplates.configureRoute 'signUp'
 AccountsTemplates.configureRoute 'verifyEmail'

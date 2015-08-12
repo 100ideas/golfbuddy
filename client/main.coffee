@@ -1,11 +1,12 @@
 Meteor.startup ->
   FlowRouter.reload()
+  BlazeLayout.setRoot 'body'
 
 # All templates can access session vars
 Template.registerHelper 'session', (input) ->
   Session.get input
 
-Template.landing.rendered = ->
+Template.bgphoto.rendered = ->
   createBackgroundSVG()
   # TODO switch to materialize parallax http://materializecss.com/parallax.html
 

@@ -1,36 +1,20 @@
-/* CSS declarations go here */
-.container.hero{
-  padding-top: 20px;
-  padding-bottom: 20px;
+body{ 
+  font-family: "Roboto", "Open Sans", "Helvetica Neue", "Helvetica", "Arial";
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-#atmodal .btn{
-  // min-width: 100%; 
-  margin-top: 1em;
+main {
+  flex: 1 0 auto;
 }
 
-.landing {
-  // padding-top: 190px;
-  // color: #fafafa;
-  // danke http://golfingindian.com/wp-content/uploads/2013/07/Website-copy-RomanRoadCourse_9th-Celtic-Manor-flag-FR11.jpg
-  // background-image: url('../img/RomanRoadCourse9th_crop.jpg');
-  // background-size: cover;
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // width: 100%;  
-}
-
-#bg-photo-container{
-  height:100%;
-  width:100%;
+#bg-photo-svg{
   position: absolute;
   z-index: -1;
   overflow: hidden;
-}
-
-.landing-layout.valign-wrapper {
-  height: 100vh;
-  .valign {width:100%;}
+  top: 0px;
+  left: 0px;
 }
 
 // thanks elliot - prevents clicking from highlighting containing html elements
@@ -43,88 +27,10 @@
   user-select: none;
 }
 
-@media only screen and (max-width : 992px) {
-  .col {margin-bottom:1em;}
+#atmodal .btn{
+  // min-width: 100%; 
+  margin-top: 1em;
 }
-// Footer
-@footer-height: 70px;
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  // overflow: hidden;
-  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
-  margin: 0px;
-  /* Margin bottom by footer height */
-  // margin-bottom: @footer-height;
-  padding: 0px;
-  color: #555555;
-  min-width: 320px;
-}
-
-// left margin for main content when fixed side nav is open
-@media only screen and (min-width: 993px) {
-  // #content {
-  //   margin-left: 240px;
-  // }
-  main {
-    margin-left: 240px;
-  }  
-}
-
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: @footer-height;
-  > .content {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
-header, main, footer {
-  padding-left: 240px;
-  &.landing {
-    padding-left: 0px !important;
-    margin-left: 0px !important;
-
-  }
-}
-
-
-@media only screen and (max-width : 992px) {
-  header, main, footer {
-    padding-left: 0;
-  }
-  body {margin: 0px;}
-}
-
-.container {
-  padding: 0 1.5rem;
-  margin: 0 auto;
-  max-width: 880px;
-  width: 100%; 
-}
-
-.landing .container{
-  width: 70%;
-}
-
-@media only screen and (min-width : 601px) {
-  .container {
-    width: 99%; }
- }
-
-@media only screen and (min-width : 993px) {
-  .container {
-    width: 98%; }
- }
-
 
 // http://www.webtempest.com/meteorjs-animation
 .fade {

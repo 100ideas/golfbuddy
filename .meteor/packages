@@ -6,8 +6,6 @@
 
 meteor-platform
 insecure
-constellation:console
-constellation:session
 less
 
 service-configuration
@@ -26,8 +24,11 @@ coffeescript
 
 materialize:materialize
 useraccounts:materialize
+useraccounts:flow-routing
 fortawesome:fontawesome
 fastclick
-constellation:autopublish
 d3
-useraccounts:flow-routing
+
+constellation:console 
+constellation:session 
+constellation:autopublish

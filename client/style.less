@@ -26,22 +26,40 @@ main {
   left: 0px;
   bottom: 0px;
   width: 100%;
-  min-height: 800px;
   height:100%
 }
-
-.landing.page-footer{
-  min-height: 30vh;
+// extend bg on small portrait screens < iphone6
+// http://www.kylejlarson.com/blog/2015/iphone-6-screen-size-web-design-tips/
+@media screen and (max-width: 374px) {
+  #bg-photo-svg{min-height: 600px;}
 }
-
 // thanks elliot - prevents clicking from highlighting containing html elements
 .btn {
   .user-select(none);
 }
 
-.landing.page-footer .btn {
+.landing-nav{
+  box-shadow: none;
+  .fa {
+    margin-top: 1em;
+    font-size: 1.33333333em;
+    text-shadow: 0 0px 3px rgba(244, 255, 129, 0.4);
+    transition: all .3s ease-out;
+    &:hover {
+      text-shadow: 0 0px 3px rgba(244, 255, 129, 0.4), 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+.landing-footer{
+  min-height: 30vh;
+}
+
+.landing-footer .btn {
   width: 100%;
   margin-bottom: 20px;
+  border: 1px solid;
+
 }
 
 // http://www.webtempest.com/meteorjs-animation

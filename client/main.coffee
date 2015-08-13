@@ -11,7 +11,7 @@ Template.bgphoto.rendered = ->
   # TODO switch to materialize parallax http://materializecss.com/parallax.html
 
 Template.landingFooter.rendered = ->
-  this.$('#at-nav-button').addClass("waves-effect btn-flat btn-large lime accent-1")
+  this.$('#at-nav-button').addClass("waves-effect btn-large lime-text accent-2-text transparent")
 
 # If for some reason we detect that the user was logged out
 # https://github.com/meteor-useraccounts/core/issues/308#issuecomment-127581562

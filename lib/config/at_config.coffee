@@ -3,7 +3,9 @@
 AccountsTemplates.configure 
   defaultTemplate: 'customFullPageAtForm' #overrive 'fullPageAtForm' default
   defaultLayout: 'masterLayout'
-  defaultLayoutRegions: {} # i.e. templates in the layout
+  defaultLayoutRegions: {
+    top: "landingNav"
+  } # i.e. templates in the layout
   defaultContentRegion: 'main' # should be name of variable of main dynamic template
   showForgotPasswordLink: true
   overrideLoginErrors: true
@@ -39,8 +41,5 @@ AccountsTemplates.configureRoute 'changePwd'
 AccountsTemplates.configureRoute 'forgotPwd'
 AccountsTemplates.configureRoute 'resetPwd'
 AccountsTemplates.configureRoute 'signIn',
-  layoutRegions:
-    main: 'landing'
-    bottom: 'landingFooter'
 AccountsTemplates.configureRoute 'signUp'
 AccountsTemplates.configureRoute 'verifyEmail'

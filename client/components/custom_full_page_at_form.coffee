@@ -1,0 +1,1 @@
+Template.customFullPageAtForm.helpers AccountsTemplates.atFormHelpers

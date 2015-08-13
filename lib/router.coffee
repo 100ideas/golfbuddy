@@ -8,7 +8,7 @@ FlowRouter.route '/',
         bottom: "footer",      
     else
       BlazeLayout.render 'masterLayout', 
-        nav: {},
+        top: "landingNav",
         main: "landing",
         bottom: "landingFooter",
 

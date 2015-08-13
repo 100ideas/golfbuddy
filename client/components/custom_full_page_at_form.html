@@ -1,8 +1,43 @@
 <template name="customFullPageAtForm">
-<div class="row row-flex">
+  <div class="row row-flex">
     <div class="col s12 m8 offset-m2 l4 offset-l4 z-depth-1 yellow accent-2">
-      {{> atForm}}
+      {{#unless hide}}
+        <div class="at-form">
+          {{#if showTitle}}
+            {{> atTitle}}
+          {{/if}}
+          {{#if showOauthServices}}
+            {{> atOauth}}
+          {{/if}}
+          {{#if showServicesSeparator}}
+            {{> atSep}}
+          {{/if}}
+          {{#if showError}}
+            {{> atError}}
+          {{/if}}
+          {{#if showResult}}
+            {{> atResult}}
+          {{/if}}
+          {{#if showMessage}}
+            {{> atMessage}}
+          {{/if}}
+          {{#if showPwdForm}}
+            {{> atPwdForm}}
+          {{/if}}
+          {{#if showTermsLink}}
+            {{> atTermsLink}}
+          {{/if}}
+          {{#if showSignInLink}}
+            {{> atSigninLink}}
+          {{/if}}
+          {{#if showSignUpLink}}
+            {{> atSignupLink}}
+          {{/if}}
+          {{#if showResendVerificationEmailLink}}
+            {{> atResendVerificationEmailLink}}
+          {{/if}}
+        </div>
+      {{/unless}}
     </div>
-</div>
-
+  </div>
 </template>

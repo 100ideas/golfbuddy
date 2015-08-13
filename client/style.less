@@ -3,19 +3,18 @@
 body{ 
   font-family: "Roboto", "Open Sans", "Helvetica Neue", "Helvetica", "Arial";
   min-height: 100vh;
-  display: flex;
+  .flex-block(); // inserts display:flex; prefixes
   .flex-direction(column);
 }
 
 main {
-  // .flex(1 0 auto);
-  display: flex;
+  .flex-block();
   .flex(1);
   .align-items(center);
 }
 
 .row-flex{
-  display: flex;
+  .flex-block();
   .flex(1);
 }
 
@@ -25,6 +24,10 @@ main {
   overflow: hidden;
   top: 0px;
   left: 0px;
+  bottom: 0px;
+  width: 100%;
+  min-height: 800px;
+  height:100%
 }
 
 .landing.page-footer{
@@ -36,12 +39,19 @@ main {
   .user-select(none);
 }
 
+.landing.page-footer .btn {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
 // http://www.webtempest.com/meteorjs-animation
 .fade {
   opacity: 1;
   .transition(opacity 200ms ease);
 }
-.fade.off {opacity: 0;}
+.fade.off {
+  opacity: 0;
+}
 
 // Card widget - thx for animation inspiration
 // http://codepen.io/MattiaAstorino/pen/zxRayG/
@@ -59,7 +69,7 @@ main {
   font-size: 12px;
   position: relative;
   bottom: 3.4em;
-  left: 6.5em;
+  left: 105.5%;
   .box-shadow(0px 1px 5px rgba( 0, 0, 0, 0.27 ));
   font-weight: bold; 
   z-index: 10;

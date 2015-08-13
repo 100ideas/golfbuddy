@@ -6,8 +6,6 @@
   # svg = d3.select('#bg-photo-container').insert('svg', ':first-child')
   svg = d3.select('body').insert('svg', ':first-child')
     .attr "id", "bg-photo-svg"
-    .attr "width", "100%"
-    .attr "height", "100%" 
     .attr "viewBox", "0 0 #{photoWidth} #{photoHeight}"
     .attr "preserveAspectRatio", "xMidYMid slice"
       .append "svg:image"

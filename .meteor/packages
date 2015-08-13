@@ -17,7 +17,6 @@ accounts-password
 
 kadira:flow-router
 kadira:blaze-layout
-useraccounts:flow-routing
 arillo:flow-router-helpers
 zimme:active-route
 
@@ -31,3 +30,4 @@ fortawesome:fontawesome
 fastclick
 constellation:autopublish
 d3
+useraccounts:flow-routing

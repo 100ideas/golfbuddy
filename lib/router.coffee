@@ -22,7 +22,6 @@ FlowRouter.route '/private',
       main: "private",
       bottom: "masterFooter",
       
-
 FlowRouter.notFound =
   action: ->
     BlazeLayout.render 'masterLayout',

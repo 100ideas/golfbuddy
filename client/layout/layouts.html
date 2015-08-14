@@ -25,9 +25,21 @@
 
 <template name="masterLayout">
   {{> Template.dynamic template=top}}  
+  
   <main>
+
+  {{#if currentUser}}
     {{> Template.dynamic template=main}}
+  {{else}}
+    {{#if loggingIn}}
+      {{> loading}}
+    {{else}}
+      {{signInRedirect}}
+    {{/if}}
+  {{/if}}
+  
   </main>
+  
   {{> Template.dynamic template=bottom}}
   {{> bgphoto}}
 </template>

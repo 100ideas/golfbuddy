@@ -20,6 +20,8 @@ header, main, footer {
   }
 }
 
+// wtf flexbox + materializecss floated .cols... 
+// https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 main {
   .flex(1);
   &.landing{
@@ -74,6 +76,15 @@ nav{
   }
 }
 
+.hover-red:hover{
+  background-color: #ef5350 !important;
+  color: #212121 !important;
+}
+
+li.waves-effect{
+  display: list-item !important;
+}
+
 footer.landing{
   min-height: 30vh;
   .btn {
@@ -114,6 +125,8 @@ footer.landing{
   z-index: 10;
 }
 
+// transitions the meteor way
+// http://www.webtempest.com/meteor-js-animation-2
 .card-bullet.animated {
   animation: bullet 500ms;
   .animation-fill-mode(both);

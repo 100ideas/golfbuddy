@@ -1,17 +1,12 @@
 <template name="home">
-  <main>
-    <h4 class="center">Hello World!</h4>
-
+<!-- dashboard for logged-in users; shows tournament views -->
     <div class="container hero">
       <div class="row">
-        <div class="col m4 s12">
-          nada
+        <div class="col s6">
+          <h4 class="center">Hello {{currentUser._id}}</h4>
         </div>
-        <div class="col m4 s12">{{> hello}}</div>
-        <div class="col m4 s12">hi</div>
+        <div class="col s6">{{> hello}}</div>
       </div>
+      {{> loremcard}}
     </div>
-
-  {{> loremcard}}
-  </main>
 </template>

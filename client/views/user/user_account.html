@@ -1,0 +1,19 @@
+<template name="userAccount">
+<!-- shows public info about user profile for non-auth visitors -->
+<!-- auth: can edit some fields (score) -->
+<!-- self: can edit all fields -->
+  <h2>user profile page</h2>
+
+<div class="container">
+  <div class="user-edit">
+    update:
+    {{> quickForm collection="Meteor.users" doc=user id="editUserForm" type="update" fields=userFields}}
+  </div>
+
+<!--   <div>
+    insert
+    {{> quickForm collection="Meteor.users" id="insertBookForm" type="insert"}}
+  </div> -->
+
+</div>
+</template>

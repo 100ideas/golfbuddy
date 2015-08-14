@@ -1,1 +1,0 @@
-Meteor.subscribe 'tournaments' if Meteor.isClient

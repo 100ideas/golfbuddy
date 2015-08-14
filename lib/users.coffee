@@ -1,11 +1,10 @@
 #see namespace.coffee
 
 Users.getUser = (userOrUserId) ->
-  if userOrUserId? 
+  unless userOrUserId? 
     unless Meteor.user()
       throw new Error
-    else
-      Meteor.user()
+    else Meteor.user()
   else if typeof userOrUserId is 'string'
     Meteor.users.findOne userOrUserId 
   else userOrUserId

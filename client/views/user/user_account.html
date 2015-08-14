@@ -2,13 +2,25 @@
 <!-- shows public info about user profile for non-auth visitors -->
 <!-- auth: can edit some fields (score) -->
 <!-- self: can edit all fields -->
-  <h2>user profile page</h2>
+
 
 <div class="container">
+  <h2>user profile page</h2>
+  <ul class="collection with-header">
+        <li class="collection-header"><h4>context</h4></li>
+        <li class="collection-item">this: {{this}} {{logContext}}</li>
+        <li class="collection-item">doc=user: {{user}}</li>
+        <li class="collection-item">Meteor.user._id: {{currentUser._id}}</li>
+        <li class="collection-item">Users.getUser(): {{Users.getUser}}</li>
+        <li class="collection-item">fields: {{userFields}}</li>
+        <li class="collection-item">params: {{FlowRouter.current}}</li>
+      </ul>
+
   <div class="user-edit">
     update:
     {{> quickForm collection="Meteor.users" doc=user id="editUserForm" type="update" fields=userFields}}
   </div>
+
 
 <!--   <div>
     insert

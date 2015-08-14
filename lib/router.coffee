@@ -31,4 +31,3 @@ FlowRouter.route '/users/:_idOrSlug/edit',
       top: "masterNav"
       main: "userAccount"
       bottom: "masterFooter"
-

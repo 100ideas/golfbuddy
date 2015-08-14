@@ -1,7 +1,57 @@
+
+# Meteor.users collection is auto-published by accounts-base
+# fields: {profile: 1, username: 1, emails: 1}
+# https://github.com/meteor/meteor/blob/0.6.2.1-with-websockets/packages/accounts-base/accounts_server.js#L288
+#
+
+# not sure if these allow rules are a good idea...
+# user.profile is secret w/o autopublish. let's turn it back
+Meteor.publish 'userdata', ->
+  Meteor.users.find {},
+    fields: 'profile.name': 1
+  
+UserData.allow
+  insert: (userId, doc) -> 
+    true
+  update: (userId, doc, fields, modifier) -> 
+    true
+  remove: (userId, doc) -> 
+    true
+
 Meteor.publish 'tournaments', ->
-  Tournaments.find {}
+  Tournaments.find createdBy: this.userId
 
 Tournaments.allow
   insert: -> true
   update: -> true
   remove: -> true
+
+# Posts = new Mongo.Collection("posts");
+
+# Posts.allow({
+#   insert: function (userId, doc) {
+#     // the user must be logged in, and the document must be owned by the user
+#     return (userId && doc.owner === userId);
+#   },
+#   update: function (userId, doc, fields, modifier) {
+#     // can only change your own documents
+#     return doc.owner === userId;
+#   },
+#   remove: function (userId, doc) {
+#     // can only remove your own documents
+#     return doc.owner === userId;
+#   },
+#   fetch: ['owner']
+# });
+
+# Posts.deny({
+#   update: function (userId, docs, fields, modifier) {
+#     // can't change owners
+#     return _.contains(fields, 'owner');
+#   },
+#   remove: function (userId, doc) {
+#     // can't remove locked documents
+#     return doc.locked;
+#   },
+#   fetch: ['locked'] // no need to fetch 'owner'
+# });

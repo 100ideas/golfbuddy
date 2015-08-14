@@ -9,9 +9,8 @@ AccountsTemplates.configure
   } # i.e. templates in the layout
   defaultContentRegion: 'main' # should be name of variable of main dynamic template
   showForgotPasswordLink: true
-  overrideLoginErrors: true
-  enablePasswordChange: true
   overrideLoginErrors: false
+  enablePasswordChange: true
   # hideSignUpLink: true,
 
   # sendVerificationEmail: true,
@@ -51,11 +50,11 @@ AccountsTemplates.configureRoute 'verifyEmail'
 AccountsTemplates.addField
   _id: 'name',
   type: 'text',
-  required: true,
+  required: false,
   minLength: 2;
   maxLength: 30;
   displayName: 'Nickname',
-  re: /^[a-z ,.'-]+$/,
+  re: /^[a-z0-9A-Z_]{3,15}$/,
   # func: (e) -> "Full Name" is e,
-  errStr: 'Only "Full Name" allowed!',
+  errStr: 'Just a simple nickname, buddy!',
   trim: true

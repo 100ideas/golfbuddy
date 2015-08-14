@@ -1,4 +1,6 @@
 Meteor.startup ->
+  # hack to get signOut route not considered among previous paths
+  AccountsTemplates.knownRoutes.push('/sign-out')
   FlowRouter.reload()
   BlazeLayout.setRoot 'body'
   console.log "Meteor.startup: known routes"

@@ -8,5 +8,5 @@ Template.userAccount.helpers
     console.log "Users.getUser(): "
     console.dir Users.getUser()
 
-Template.userAccount.rendered = ->
+
 

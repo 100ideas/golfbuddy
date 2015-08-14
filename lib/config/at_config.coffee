@@ -5,6 +5,7 @@ AccountsTemplates.configure
   defaultLayout: 'landingLayout'
   defaultLayoutRegions: {
     top: "landingNav"
+    bottom: {}
   } # i.e. templates in the layout
   defaultContentRegion: 'main' # should be name of variable of main dynamic template
   showForgotPasswordLink: true

@@ -3,17 +3,10 @@ FlowRouter.route '/',
   action: (params, queryParams) ->
     # BUG this is not reactive; log in, then reload page; Meteor.user() isn't
     # checked again so we always stay on landingLayout
-    if Meteor.user()  
-      BlazeLayout.render 'masterLayout', 
-        top: "masterNav",
-        main: "home",
-        bottom: "masterFooter",      
-    else
-      BlazeLayout.render 'landingLayout', 
-        top: "landingNav",
-        main: "landing",
-        bottom: "landingFooter",
-
+    BlazeLayout.render 'masterLayout', 
+      top: "masterNav",
+      main: "home",
+      bottom: "masterFooter",      
 
 FlowRouter.route '/private',
   name: "private",

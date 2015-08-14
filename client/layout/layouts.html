@@ -14,35 +14,42 @@
 <body>
 </body>
 
-<template name="landingLayout">
-  {{> Template.dynamic template=top}}
-  <main class="landing">
-    {{> Template.dynamic template=main}}
-  </main>
-  {{> Template.dynamic template=bottom}}
-  {{> bgphoto}}
-</template>
-
 <template name="masterLayout">
-  {{> Template.dynamic template=top}}  
-  
-  <main>
 
   {{#if currentUser}}
-    {{> Template.dynamic template=main}}
+    {{> Template.dynamic template=top}}  
+    <main>
+      {{> Template.dynamic template=main}}
+    </main>
+    {{> Template.dynamic template=bottom}}
+
   {{else}}
+    {{> bgphoto}}
     {{#if loggingIn}}
-      {{> loading}}
+      <main>
+        {{> loading}}
+      </main>
+    
     {{else}}
-      {{signInRedirect}}
+      <main class="landing">
+        <!-- {{> landing}} -->
+        {{> landing}}
+      </main>
+      {{> landingFooter}}
     {{/if}}
   {{/if}}
   
-  </main>
-  
-  {{> Template.dynamic template=bottom}}
 </template>
 
 <template name="bgphoto">
   <!-- Template.bgphoto.rendered -> createBackgroundSVG() -->
+</template>
+
+<template name="landingLayout">
+  {{> Template.dynamic template=top}}  
+    <main class="landing">
+      <!-- {{> landing}} -->
+      {{> Template.dynamic template=main}}
+    </main>
+  {{> Template.dynamic template=bottom}}
 </template>

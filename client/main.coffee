@@ -27,7 +27,7 @@ Template.masterNav.rendered = ->
   this.$('#at-nav-button').addClass("waves-effect btn-large lime-text accent-2-text transparent")  
   console.log "masterNav rendered"  
   this.$(".button-collapse").sideNav
-    closeOnClick: true
+    closeOnClick: false
   console.log "sideNav init (should be -after- masterNav"
   
 Template.home.rendered = ->

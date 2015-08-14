@@ -1,7 +1,9 @@
 FlowRouter.route '/',
   name: "home",
   action: (params, queryParams) ->
-    if Meteor.user()
+    # BUG this is not reactive; log in, then reload page; Meteor.user() isn't
+    # checked again so we always stay on landingLayout
+    if Meteor.user()  
       BlazeLayout.render 'masterLayout', 
         top: "masterNav",
         main: "home",

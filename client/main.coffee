@@ -26,10 +26,12 @@ Template.landingFooter.rendered = ->
 Template.masterNav.rendered = ->
   this.$('#at-nav-button').addClass("waves-effect btn-large lime-text accent-2-text transparent")  
   console.log "masterNav rendered"  
-  $(".button-collapse").sideNav
+  this.$(".button-collapse").sideNav
     closeOnClick: true
   console.log "sideNav init (should be -after- masterNav"
-
+  
+Template.home.rendered = ->
+  $('#bg-photo-svg').remove()
 
 
 # If for some reason we detect that the user was logged out

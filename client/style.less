@@ -7,13 +7,28 @@ body{
   .flex-direction(column);
 }
 
-main {
-  .flex-block();
-  .flex(1);
-  .align-items(center);
+// slide-nav setup; landing templates don't have slidenav menu
+header, main, footer {
+  padding-left:240px;
+  &.landing{
+    padding-left:0;
+  }
+}
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
 }
 
-.row-flex{
+main {
+  .flex(1);
+  &.landing{
+    .flex-block();
+    .align-items(center);
+  }
+}
+
+.landing .row-flex{
   .flex-block();
   .flex(1);
 }
@@ -38,7 +53,7 @@ main {
   .user-select(none);
 }
 
-.landing-nav{
+nav{
   box-shadow: none;
   .fa {
     margin-top: 1em;
@@ -50,16 +65,22 @@ main {
     }
   }
 }
-
-.landing-footer{
-  min-height: 30vh;
+#nav-mobile{
+  li a {
+    color: #cddc39; // lime-text
+  }
+  li:hover a{
+    color:#444;
+  }
 }
 
-.landing-footer .btn {
-  width: 100%;
-  margin-bottom: 20px;
-  border: 1px solid;
-
+footer.landing{
+  min-height: 30vh;
+  .btn {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid;
+  }
 }
 
 // http://www.webtempest.com/meteorjs-animation

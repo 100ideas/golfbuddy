@@ -2,7 +2,7 @@
 #  Options
 AccountsTemplates.configure 
   defaultTemplate: 'customFullPageAtForm' #overrive 'fullPageAtForm' default
-  defaultLayout: 'masterLayout'
+  defaultLayout: 'landingLayout'
   defaultLayoutRegions: {
     top: "landingNav"
   } # i.e. templates in the layout

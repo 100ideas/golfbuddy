@@ -1,3 +1,3 @@
-Template.nav.rendered = ->
+Template.masterNav.rendered = ->
   $(".button-collapse").sideNav
     closeOnClick: true

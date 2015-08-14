@@ -1,0 +1,34 @@
+<template name="landingNav">
+  <!-- template=landingNav -->
+  <header>
+    <nav class="transparent landing">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="{{pathFor 'home'}}" class="brand-logo"><i class="fa fa-lg fa-trophy yellow-text text-accent-4"></i></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+</template>
+
+<template name="masterNav">
+<!-- template=nav -->
+  <header class="master">
+    <nav class="transparent main-nav">
+      <div class="container">
+        <div class="nav-wrapper">
+          <ul id="nav-mobile" class="right side-nav fixed grey darken-4">
+            <li>
+              <a href="{{pathFor 'home'}}" class="center-align"><i class="fa fa-lg fa-trophy yellow-text text-accent-4"></i></a>
+            </li>
+            <li><a href="{{pathFor 'home'}}">ScoreBoard</a></li>
+            <li><a href="{{pathFor 'home'}}">Map</a></li>
+            <li><a href="{{pathFor 'private'}}">Admin</a></li>
+            <li>{{> atNavButton }}</li>
+          </ul>
+          <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+</template>

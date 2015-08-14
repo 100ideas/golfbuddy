@@ -14,17 +14,20 @@
 <body>
 </body>
 
-<template name="masterLayout">
-  <!-- Template.dynamic template=top -->
+<template name="landingLayout">
   {{> Template.dynamic template=top}}
-  <!-- Template.dynamic template=main -->
-  
+  <main class="landing">
+    {{> Template.dynamic template=main}}
+  </main>
+  {{> Template.dynamic template=bottom}}
+  {{> bgphoto}}
+</template>
+
+<template name="masterLayout">
+  {{> Template.dynamic template=top}}  
   <main>
     {{> Template.dynamic template=main}}
   </main>
-  
-
-  <!-- Template.dynamic template=bottom -->
   {{> Template.dynamic template=bottom}}
   {{> bgphoto}}
 </template>

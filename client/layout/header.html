@@ -1,7 +1,7 @@
 <template name="landingNav">
   <!-- template=landingNav -->
-  <header>
-    <nav class="transparent landing">
+  <header class="landing">
+    <nav class="transparent">
       <div class="container">
         <div class="nav-wrapper">
           <a href="{{pathFor 'home'}}" class="brand-logo"><i class="fa fa-lg fa-trophy yellow-text text-accent-4"></i></a>
@@ -21,6 +21,7 @@
             <li>
               <a href="{{pathFor 'home'}}" class="center-align"><i class="fa fa-lg fa-trophy yellow-text text-accent-4"></i></a>
             </li>
+            <li class="nohighlight">hi, <strong>user</strong></li>
             <li class="waves-effect"><a href="{{pathFor 'home'}}">ScoreBoard</a></li>
             <li class="waves-effect"><a href="{{pathFor 'home'}}">Map</a></li>
             <li class="waves-effect"><a href="{{pathFor 'private'}}">Admin</a></li>

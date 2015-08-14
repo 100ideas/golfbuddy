@@ -12,8 +12,8 @@ Template.registerHelper 'session', (input) ->
 Template.registerHelper 'signInRedirect', ->
   # FlowRouter.go 'signIn'
   FlowRouter.reload()
-  Materialize.toast "Uh oh, something went wrong..." , 4000, 'red lighten-1 grey-text text-darken-4', ->
-    Materialize.toast "Please login again, friend!" , 8000, 'lime grey-text text-darken-4'
+  Materialize.toast "Uh oh, something went wrong..." , 3000, 'red lighten-1 grey-text text-darken-4', ->
+    Materialize.toast "Please sign in again, friend!" , 5000, 'lime grey-text text-darken-4'
 
 Template.bgphoto.rendered = ->
   createBackgroundSVG()
@@ -25,6 +25,12 @@ Template.landingFooter.rendered = ->
 
 Template.masterNav.rendered = ->
   this.$('#at-nav-button').addClass("waves-effect btn-large lime-text accent-2-text transparent")  
+  console.log "masterNav rendered"  
+  $(".button-collapse").sideNav
+    closeOnClick: true
+  console.log "sideNav init (should be -after- masterNav"
+
+
 
 # If for some reason we detect that the user was logged out
 # https://github.com/meteor-useraccounts/core/issues/308#issuecomment-127581562
@@ -32,8 +38,8 @@ Template.masterNav.rendered = ->
 #   BlazeLayout.render 'masterLayout', main: "landing" unless Meteor.user()
 
 # # https://github.com/kadirahq/flow-router/#flowroutergetroutename
-# Tracker.autorun ->
-#   routeName = FlowRouter.getRouteName()
+Tracker.autorun ->
+  console.log "routed to -> #{FlowRouter.getRouteName()}"
 #   # routeState = FlowRouter.current()
 #   console.log "routerState:"
 #   # console.table(routeState, ["path", "title", "state", "querystring", "pathname", "params", "options", "name"])

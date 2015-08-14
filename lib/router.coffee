@@ -35,3 +35,4 @@ FlowRouter.route '/users/:_idOrSlug',
       top: "masterNav",
       main: "userProfile",
       bottom: "masterFooter",
+

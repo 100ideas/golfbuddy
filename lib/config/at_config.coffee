@@ -10,6 +10,7 @@ AccountsTemplates.configure
   showForgotPasswordLink: true
   overrideLoginErrors: true
   enablePasswordChange: true
+  overrideLoginErrors: false
   # hideSignUpLink: true,
 
   # sendVerificationEmail: true,
@@ -35,6 +36,7 @@ AccountsTemplates.configure
   # Hooks
   onLogoutHook: ->
     FlowRouter.reload()
+    Materialize.toast "See you again soon!" , 5000, 'lime grey-text text-darken-4'
 
 # Routes
 AccountsTemplates.configureRoute 'changePwd'
@@ -43,3 +45,16 @@ AccountsTemplates.configureRoute 'resetPwd'
 AccountsTemplates.configureRoute 'signIn',
 AccountsTemplates.configureRoute 'signUp'
 AccountsTemplates.configureRoute 'verifyEmail'
+
+
+AccountsTemplates.addField
+  _id: 'name',
+  type: 'text',
+  required: true,
+  minLength: 2;
+  maxLength: 30;
+  displayName: 'Nickname',
+  re: /^[a-z ,.'-]+$/,
+  # func: (e) -> "Full Name" is e,
+  errStr: 'Only "Full Name" allowed!',
+  trim: true

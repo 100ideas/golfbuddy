@@ -21,7 +21,10 @@
             <li class="nohighlight">
               <a href="{{pathFor 'home'}}" class="center-align"><i class="fa fa-lg fa-trophy yellow-text text-accent-4"></i></a>
             </li>
-            <li class="nohighlight center-align">Howdy, <strong>{{displayName}}</strong></li>
+            <li class="nohighlight center-align"><strong>
+            <!-- TODO replace with Slugify helper -->
+            <a href="{{pathFor 'user-edit' _idOrSlug=userSlug}}">Howdy, {{displayName}}</a></strong>
+            </li>
             <li class="waves-effect"><a href="{{pathFor 'home'}}">ScoreBoard</a></li>
             <li class="waves-effect"><a href="{{pathFor 'home'}}">Map</a></li>
             <li class="waves-effect"><a href="{{pathFor 'private'}}">Admin</a></li>

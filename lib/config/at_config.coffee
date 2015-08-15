@@ -47,14 +47,14 @@ AccountsTemplates.configureRoute 'signUp'
 AccountsTemplates.configureRoute 'verifyEmail'
 
 
-AccountsTemplates.addField
-  _id: 'name',
-  type: 'text',
-  required: false,
-  minLength: 2;
-  maxLength: 30;
-  displayName: 'Nickname',
-  re: /^[a-z0-9A-Z_]{3,15}$/,
-  # func: (e) -> "Full Name" is e,
-  errStr: 'Just a simple nickname, buddy!',
-  trim: true
+# AccountsTemplates.addField
+#   _id: 'name',
+#   type: 'text',
+#   required: false,
+#   minLength: 2;
+#   maxLength: 30;
+#   displayName: 'Nickname',
+#   re: /^[a-z0-9A-Z_]{3,15}$/,
+#   # func: (e) -> "Full Name" is e,
+#   errStr: 'Just a simple nickname, buddy!',
+#   trim: true

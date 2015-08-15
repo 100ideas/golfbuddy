@@ -5,6 +5,45 @@
 SimpleSchema.extendOptions
   editableBy: Match.Optional [String]
 
+@Schema = {}
+
+# collection2 user schema boilerplate
+# https://github.com/aldeed/meteor-collection2#attach-a-schema-to-meteorusers
+Schema.UserProfile = new SimpleSchema
+  name:
+    type: String,
+    # regEx: /^[a-z ,.'-]{2,16}$/,
+    max: 40
+  
+  nickName:
+    type: String,
+    regEx: /^[a-zA-Z]{2,16}$/,
+
+  birthday:
+    type: Date,
+    optional: true
+    autoform:
+      type: "pickadate"
+  
+  gender:
+    type: String,
+    allowedValues: ['Male', 'Female'],
+  
+  bio:
+    type: String,
+    optional: true
+
+  # slug:
+  #   type: String,
+  #   public: true,
+  #   optional: true
+  #   autoValue: ->
+  #     content = this.field "emails.0.address"
+  #     if content.isSet 
+  #       return content.value.split('@')[0]
+  #     else this.unset() # Prevent user from supplying her own value
+      
+
 # Telescope Users.schema
 # https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-users/lib/users.js
 Users.schema = new SimpleSchema
@@ -12,10 +51,17 @@ Users.schema = new SimpleSchema
     type: String
     optional: true
   
-  nickname:
-    type: String,
-    regEx: /^[a-z0-9A-Z_]{3,15}$/
-    optional: true
+  #  Whenever the "content" field is updated, automatically set
+  # the first word of the content into firstWord field.
+  # nickname:
+  #   type: String,
+  #   regEx: /^[a-z0-9A-Z_]{3,15}$/
+  #   optional: true
+  #   autoValue: ->
+  #     content = this.field "content" # <- TODO pick proper field... label?
+  #     return content.value.split(' ')[0] if content.isSet
+  #     #else
+  #       #this.unset(); # Prevent user from supplying her own value    
   
   emails:
     type: [Object],
@@ -45,12 +91,12 @@ Users.schema = new SimpleSchema
     editableBy: ["admin", "member"]
     autoform:
       omit: true
+      type: "switch"
   
   profile:
-    type: Object
+    type: Schema.UserProfile
     editableBy: ["admin", "member"]
     optional: true
-    blackbox: true
   
 Users.attachSchema Users.schema
 

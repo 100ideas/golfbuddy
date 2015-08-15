@@ -42,8 +42,9 @@ AccountsTemplates.configure
 AccountsTemplates.configureRoute 'changePwd'
 AccountsTemplates.configureRoute 'forgotPwd'
 AccountsTemplates.configureRoute 'resetPwd'
-AccountsTemplates.configureRoute 'signIn',
-AccountsTemplates.configureRoute 'signUp'
+AccountsTemplates.configureRoute 'signIn'
+AccountsTemplates.configureRoute 'signUp',
+  redirect: "/users/newuser/edit"
 AccountsTemplates.configureRoute 'verifyEmail'
 
 

@@ -24,7 +24,7 @@ FlowRouter.notFound =
       main: "pageNotFound"
       bottom: "masterFooter"
 
-FlowRouter.route '/users/:_idOrSlug/edit',
+FlowRouter.route '/users/:username/edit',
   name: "user-edit"
   action: (params, queryParams) ->
     BlazeLayout.render 'masterLayout',

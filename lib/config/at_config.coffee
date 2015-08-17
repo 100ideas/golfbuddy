@@ -44,18 +44,18 @@ AccountsTemplates.configureRoute 'forgotPwd'
 AccountsTemplates.configureRoute 'resetPwd'
 AccountsTemplates.configureRoute 'signIn'
 AccountsTemplates.configureRoute 'signUp',
-  redirect: "/users/newuser/edit"
+  redirect: "/users/profile/edit"
 AccountsTemplates.configureRoute 'verifyEmail'
 
 
-# AccountsTemplates.addField
-#   _id: 'name',
-#   type: 'text',
-#   required: false,
-#   minLength: 2;
-#   maxLength: 30;
-#   displayName: 'Nickname',
-#   re: /^[a-z0-9A-Z_]{3,15}$/,
-#   # func: (e) -> "Full Name" is e,
-#   errStr: 'Just a simple nickname, buddy!',
-#   trim: true
+AccountsTemplates.addField
+  _id: 'username',
+  type: 'text',
+  required: true,
+  minLength: 2;
+  maxLength: 15;
+  displayName: 'username',
+  re: /^[a-z0-9A-Z_]{3,15}$/,
+  # func: (e) -> "Full Name" is e,
+  errStr: 'Just a simple nickname, buddy!',
+  trim: true

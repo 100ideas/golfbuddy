@@ -9,6 +9,7 @@ Tournaments.allow
   remove: (userId, doc) -> 
     true
 
+
 # Posts = new Mongo.Collection("posts");
 
 # Posts.allow({

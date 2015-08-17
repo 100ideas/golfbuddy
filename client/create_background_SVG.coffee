@@ -13,7 +13,7 @@
       .attr "preserveAspectRatio", "xMidYMid slice"
         .append "svg:image"
         .attr "id", "bg-photo"
-        .attr "xlink:href", '../img/RomanRoadCourse9th_crop.jpg'
+        .attr "xlink:href", '/img/RomanRoadCourse9th_crop.jpg'
         .attr "width", photoWidth
         .attr "height", photoHeight
   else console.log "skipping re-adding #bg-photo-svg"

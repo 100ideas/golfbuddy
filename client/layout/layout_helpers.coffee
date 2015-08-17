@@ -11,18 +11,19 @@ Template.registerHelper 'signInRedirect', ->
 Template.registerHelper 'displayName', (userOrUserId) ->
   displayName userOrUserId
 
-Template.registerHelper 'userSlug', (userOrUserId) ->
-  slug = Users.getUser(userOrUserId).profile.nickName
-  if slug
-    return slug.trim()[0...6]
-  else Users.getUser(userOrUserId)[0...6]
+# Template.registerHelper 'userSlug', (userOrUserId) ->
+#   slug = Users.getUser(userOrUserId).profile.nickName
+#   if slug
+#     return slug.trim()[0...6]
+#   else Users.getUser(userOrUserId)[0...6]
+
 
 Template.bgphoto.rendered = ->
   createBackgroundSVG()
   # TODO switch to materialize parallax http://materializecss.com/parallax.html
 
 Template.home.rendered = ->
-  $('#bg-photo-svg').remove()
+  # $('#bg-photo-svg').remove()
 
 # hack
 Template.masterNav.rendered = ->

@@ -2,22 +2,23 @@
 # https://github.com/aldeed/meteor-simple-schema#extending-the-schema-options
 # https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-lib/lib/base.js
 # https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-lib/lib/collections.js
-SimpleSchema.extendOptions
+#
+# see core.js
+SimpleSchema.extendOptions 
   editableBy: Match.Optional [String]
+  public: Match.Optional(Boolean), # public: true means the field is published freely
+  profile: Match.Optional(Boolean), # profile: true means the field is shown on user profiles
 
 @Schema = {}
 
 # collection2 user schema boilerplate
 # https://github.com/aldeed/meteor-collection2#attach-a-schema-to-meteorusers
-Schema.UserProfile = new SimpleSchema
+Schema.UserProfile = new SimpleSchema 
+
   name:
     type: String,
     # regEx: /^[a-z ,.'-]{2,16}$/,
     max: 40
-  
-  nickName:
-    type: String,
-    regEx: /^[a-zA-Z]{2,16}$/,
 
   birthday:
     type: Date,
@@ -28,10 +29,23 @@ Schema.UserProfile = new SimpleSchema
   gender:
     type: String,
     allowedValues: ['Male', 'Female'],
+
+  handicap:
+    type: String,
+    optional: true
+    autoform:
+      afFieldInput:
+        type: "number"
   
+  scores:
+    type: [Number]
+    optional: true
+
   bio:
     type: String,
     optional: true
+
+
 
   # slug:
   #   type: String,
@@ -42,7 +56,11 @@ Schema.UserProfile = new SimpleSchema
   #     if content.isSet 
   #       return content.value.split('@')[0]
   #     else this.unset() # Prevent user from supplying her own value
-      
+
+
+# Schema.Tournament = new SimpleSchema
+#   players:
+
 
 # Telescope Users.schema
 # https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-users/lib/users.js
@@ -53,16 +71,16 @@ Users.schema = new SimpleSchema
   
   #  Whenever the "content" field is updated, automatically set
   # the first word of the content into firstWord field.
-  # nickname:
-  #   type: String,
-  #   regEx: /^[a-z0-9A-Z_]{3,15}$/
-  #   optional: true
-  #   autoValue: ->
-  #     content = this.field "content" # <- TODO pick proper field... label?
-  #     return content.value.split(' ')[0] if content.isSet
-  #     #else
-  #       #this.unset(); # Prevent user from supplying her own value    
-  
+  username:
+    type: String,
+    regEx: /^[a-z0-9A-Z_]{3,15}$/
+    public: true
+    # optional: true
+    # autoValue: ->
+    #   content = this.field "content" # <- TODO pick proper field... label?
+    #   return content.value.split(' ')[0] if content.isSet
+      #else
+        #this.unset(); # Prevent user from supplying her own value    
   emails:
     type: [Object],
     optional: true
@@ -85,18 +103,18 @@ Users.schema = new SimpleSchema
     type: Date
     optional: true
   
-  isAdmin:
-    type: Boolean
-    optional: true
-    editableBy: ["admin", "member"]
-    autoform:
-      omit: true
-      type: "switch"
-  
   profile:
     type: Schema.UserProfile
     editableBy: ["admin", "member"]
     optional: true
+
+  # TODO add edit autoform for profile page only for existing admins
+  isAdmin:
+    type: Boolean
+    optional: true
+    editableBy: ["admin"]
+    autoform:
+      type: "switch"    
   
 Users.attachSchema Users.schema
 
@@ -120,7 +138,7 @@ Users.getUser = (userOrUserId) ->
 @displayName = (userOrUserId) ->
   user = Users.getUser userOrUserId
   return user.profile.name if user.profile?.name?
-  return user.emails[0].address;
+  return user.username;
 
 
 #############################################

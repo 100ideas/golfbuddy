@@ -1,8 +1,6 @@
 if Meteor.isClient 
-  Meteor.subscribe 'userdata' if Meteor.isClient
-  Meteor.subscribe 'tournaments' if Meteor.isClient
+  Meteor.subscribe 'tournaments'
 
-@UserData = new Mongo.Collection 'userdata'
 @Tournaments = new Mongo.Collection 'tournaments'
 
 # Tournament

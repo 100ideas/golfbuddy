@@ -5,10 +5,9 @@
 
 
 <div class="container">
-  <h2>user profile page</h2>
+  <h2 class="center">Hello, {{currentUser.profile.name}}</h2>
 
   <div class="user-edit">
-    update: {{userFields}}
     {{> quickForm collection="Meteor.users" doc=currentUser id="editUserForm" fields=userFields type="update"}}
   </div>
 

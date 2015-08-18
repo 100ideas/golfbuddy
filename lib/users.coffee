@@ -1,16 +1,3 @@
-# extend SimpleSchema with custom options
-# https://github.com/aldeed/meteor-simple-schema#extending-the-schema-options
-# https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-lib/lib/base.js
-# https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-lib/lib/collections.js
-#
-# see core.js
-SimpleSchema.extendOptions 
-  editableBy: Match.Optional [String]
-  public: Match.Optional(Boolean), # public: true means the field is published freely
-  profile: Match.Optional(Boolean), # profile: true means the field is shown on user profiles
-
-@Schema = {}
-
 # collection2 user schema boilerplate
 # https://github.com/aldeed/meteor-collection2#attach-a-schema-to-meteorusers
 Schema.UserProfile = new SimpleSchema 
@@ -45,26 +32,9 @@ Schema.UserProfile = new SimpleSchema
     type: String,
     optional: true
 
-
-
-  # slug:
-  #   type: String,
-  #   public: true,
-  #   optional: true
-  #   autoValue: ->
-  #     content = this.field "emails.0.address"
-  #     if content.isSet 
-  #       return content.value.split('@')[0]
-  #     else this.unset() # Prevent user from supplying her own value
-
-
-# Schema.Tournament = new SimpleSchema
-#   players:
-
-
 # Telescope Users.schema
 # https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-users/lib/users.js
-Users.schema = new SimpleSchema
+Schema.User = new SimpleSchema
   _id:
     type: String
     optional: true
@@ -116,7 +86,7 @@ Users.schema = new SimpleSchema
     autoform:
       type: "switch"    
   
-Users.attachSchema Users.schema
+Users.attachSchema Schema.User
 
 Users.allow
   update: _.partial App.allowCheck, Meteor.users

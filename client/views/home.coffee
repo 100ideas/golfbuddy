@@ -16,3 +16,4 @@ Template.leaderboard.helpers
       handicap: 1
       scores: [4,4,4,2,1,4]
   ]
+

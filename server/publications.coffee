@@ -1,12 +1,20 @@
 Meteor.publish 'tournaments', ->
   Tournaments.find createdBy: this.userId
 
+# Tournaments.allow
+#   insert: (userId, doc) -> 
+#     userId? is doc.owner
+#   update: (userId, doc, fields, modifier) -> 
+#     true
+#   remove: (userId, doc) -> 
+#     true
+
 Tournaments.allow
-  insert: (userId, doc) -> 
-    userId? is doc.owner
-  update: (userId, doc, fields, modifier) -> 
+  insert: ->
     true
-  remove: (userId, doc) -> 
+  update: ->
+    true
+  remove: ->
     true
 
 
